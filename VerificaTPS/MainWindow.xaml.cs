@@ -20,9 +20,17 @@ namespace VerificaTPS
     /// </summary>
     public partial class MainWindow : Window
     {
+        Biblioteca x;
         public MainWindow()
         {
             InitializeComponent();
+            x = new Biblioteca();
+        }
+
+        private void AggiungiLibro_Click(object sender, RoutedEventArgs e)
+        {
+            Libro x = new Libro(TxtNome.Text, TXTtitolo.Text, TxtData.Text, TxtEditor.Text, int.Parse(TXTnumeroPagine.Text));
+            x.AggiungiLibro(x);
         }
     }
 }

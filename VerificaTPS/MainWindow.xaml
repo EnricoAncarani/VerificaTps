@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Label Content="Autore" HorizontalAlignment="Left" Margin="89,50,0,0" VerticalAlignment="Top"/>
+        <Label Content="Titolo" HorizontalAlignment="Left" Margin="95,81,0,0" VerticalAlignment="Top"/>
+        <Label Content="Anno Di publicazione" HorizontalAlignment="Left" Margin="57,112,0,0" VerticalAlignment="Top"/>
+        <Label Content="Editor" HorizontalAlignment="Left" Margin="95,143,0,0" VerticalAlignment="Top"/>
+        <Label Content="NumeroPagine" HorizontalAlignment="Left" Margin="74,174,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtNome" HorizontalAlignment="Left" Height="23" Margin="185,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TXTtitolo" HorizontalAlignment="Left" Height="23" Margin="185,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TxtData" HorizontalAlignment="Left" Height="23" Margin="185,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TxtEditor" HorizontalAlignment="Left" Height="23" Margin="185,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TXTnumeroPagine" HorizontalAlignment="Left" Height="23" Margin="185,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="AggiungiLibro" Content="Aggiungi Libro" HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Margin="195,238,0,0" Click="AggiungiLibro_Click"/>
+
     </Grid>
 </Window>
