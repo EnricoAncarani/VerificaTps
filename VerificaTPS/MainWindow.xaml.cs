@@ -29,8 +29,32 @@ namespace VerificaTPS
 
         private void AggiungiLibro_Click(object sender, RoutedEventArgs e)
         {
-            Libro x = new Libro(TxtNome.Text, TXTtitolo.Text, TxtData.Text, TxtEditor.Text, int.Parse(TXTnumeroPagine.Text));
-            x.AggiungiLibro(x);
+            Libro y = new Libro(TxtNome.Text, TXTtitolo.Text, TxtData.Text, TxtEditor.Text, int.Parse(TXTnumeroPagine.Text));
+            x.AggiungiLibro(y);
+            ListaBox.ItemsSource = "";
+            ListaBox.ItemsSource = x.ListaLibri;
+            Totale_Libri_Presenti.Content = x.CalcoloLibriPresenti;
+        }
+
+        private void RicercaPerTitolo_Click(object sender, RoutedEventArgs e)
+        {
+            List<Libro> ListaPerTitolo = x.RicercaLibroPerTitolo(TXTtitolo.Text);
+            ListaBox.ItemsSource = "";
+            ListaBox.ItemsSource = ListaPerTitolo;
+            Totale_Libri_Presenti.Content = x.CalcoloLibriPresenti;
+        }
+
+        private void RicercaPerAutore_Click(object sender, RoutedEventArgs e)
+        {
+            List<Libro> ListaPerAutore = x.RicercaPerAutore(TxtNome.Text);
+            ListaBox.ItemsSource = "";
+            ListaBox.ItemsSource = ListaPerAutore;
+            Totale_Libri_Presenti.Content = x.CalcoloLibriPresenti;
+        }
+
+        private void ListaBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MessageBox.Show((Libro)ListaBox.SelectedItem.CalcolaTempoLettura);
         }
     }
 }
