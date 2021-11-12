@@ -13,7 +13,10 @@ namespace VerificaTPS
         private string _oraDiApertura;
         private string _oraDiChiusura;
         private List<Libro> _listaLibri;
-        
+         public Biblioteca()
+        {
+            _listaLibri = new List<Libro>();
+        }
         public string Nome
         {
             get { return _nome; }
