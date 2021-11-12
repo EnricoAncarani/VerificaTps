@@ -33,7 +33,7 @@ namespace VerificaTPS
             x.AggiungiLibro(y);
             ListaBox.ItemsSource = "";
             ListaBox.ItemsSource = x.ListaLibri;
-            Totale_Libri_Presenti.Content = x.CalcoloLibriPresenti;
+            Totale_Libri_Presenti.Content = x.CalcoloLibriPresenti();
         }
 
         private void RicercaPerTitolo_Click(object sender, RoutedEventArgs e)
@@ -41,7 +41,7 @@ namespace VerificaTPS
             List<Libro> ListaPerTitolo = x.RicercaLibroPerTitolo(TXTtitolo.Text);
             ListaBox.ItemsSource = "";
             ListaBox.ItemsSource = ListaPerTitolo;
-            Totale_Libri_Presenti.Content = x.CalcoloLibriPresenti;
+            Totale_Libri_Presenti.Content = x.CalcoloLibriPresenti();
         }
 
         private void RicercaPerAutore_Click(object sender, RoutedEventArgs e)
@@ -49,12 +49,16 @@ namespace VerificaTPS
             List<Libro> ListaPerAutore = x.RicercaPerAutore(TxtNome.Text);
             ListaBox.ItemsSource = "";
             ListaBox.ItemsSource = ListaPerAutore;
-            Totale_Libri_Presenti.Content = x.CalcoloLibriPresenti;
+            Totale_Libri_Presenti.Content = x.CalcoloLibriPresenti();
         }
 
         private void ListaBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MessageBox.Show((Libro)ListaBox.SelectedItem.CalcolaTempoLettura);
+            Libro Prova = (Libro)ListaBox.SelectedItem;
+            if(ListaBox.SelectedIndex!=-1)
+            {
+                MessageBox.Show("Per leggerlo servono " + Prova.CalcolaTempoLettura());
+            }
         }
     }
 }
