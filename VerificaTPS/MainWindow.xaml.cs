@@ -19,7 +19,7 @@ namespace VerificaTPS
     /// Logica di interazione per MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    {//prova
         Biblioteca x;
         public MainWindow()
         {
