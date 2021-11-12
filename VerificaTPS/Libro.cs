@@ -87,5 +87,35 @@ namespace VerificaTPS
                 }
             }
         }
+        public string CalcolaTempoLettura()
+        {
+            string TempoLettura="Errore";
+            if(NumeroPagine<100)
+            {
+                TempoLettura = "1H";
+                return TempoLettura;
+            }
+            else
+            {
+                if(NumeroPagine>100&&NumeroPagine<200)
+                {
+                    TempoLettura = "2H";
+                    return TempoLettura;
+                }
+                else
+                {
+                    if(NumeroPagine>200)
+                    {
+                        TempoLettura = ">2H";
+                        return TempoLettura;
+                    }
+                }
+            }
+            return TempoLettura;
+        }
+        public override string ToString()
+        {
+            return "Il libro scritto da:" + Autore + " chiamato:" + Titolo+" publicato nel "+DataPublicazione+" dalla:"+Editor+" possiede "+NumeroPagine+" pagine";
+        }
     }
 }
