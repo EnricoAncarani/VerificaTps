@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +19,7 @@ namespace VerificaTPS
     /// Logica di interazione per MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {//prova
+    {
         Biblioteca x;
         public MainWindow()
         {
@@ -32,8 +32,8 @@ namespace VerificaTPS
             Libro y = new Libro(TxtNome.Text, TXTtitolo.Text, TxtData.Text, TxtEditor.Text, int.Parse(TXTnumeroPagine.Text));
             x.AggiungiLibro(y);
             ListaBox.ItemsSource = "";
-            ListaBox.ItemsSource = x.ListaLibri;
-            Totale_Libri_Presenti.Content = x.CalcoloLibriPresenti();
+            ListaBox.ItemsSource = x._listaLibri;
+            Totale_Libri_Presenti.Content = x.NumeroLibriPresenti();
         }
 
         private void RicercaPerTitolo_Click(object sender, RoutedEventArgs e)
@@ -41,15 +41,15 @@ namespace VerificaTPS
             List<Libro> ListaPerTitolo = x.RicercaLibroPerTitolo(TXTtitolo.Text);
             ListaBox.ItemsSource = "";
             ListaBox.ItemsSource = ListaPerTitolo;
-            Totale_Libri_Presenti.Content = x.CalcoloLibriPresenti();
+            Totale_Libri_Presenti.Content = x.NumeroLibriPresenti();
         }
 
         private void RicercaPerAutore_Click(object sender, RoutedEventArgs e)
         {
-            List<Libro> ListaPerAutore = x.RicercaPerAutore(TxtNome.Text);
+            List<Libro> ListaPerAutore = x.RIcercaPerAutore(TxtNome.Text);
             ListaBox.ItemsSource = "";
             ListaBox.ItemsSource = ListaPerAutore;
-            Totale_Libri_Presenti.Content = x.CalcoloLibriPresenti();
+            Totale_Libri_Presenti.Content = x.NumeroLibriPresenti();
         }
 
         private void ListaBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
