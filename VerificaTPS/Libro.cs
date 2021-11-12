@@ -13,7 +13,14 @@ namespace VerificaTPS
         private string _dataPublicazione;
         private string _editor;
         private int _numeroPagine;
-
+        public Libro(string autore, string titolo, string datapubblicazione, string editor, int numeropagine)
+        {
+            Autore = autore;
+            Titolo = titolo;
+            DataPublicazione = datapubblicazione;
+            Editor = editor;
+            NumeroPagine = numeropagine;
+        }
         public string Autore
         {
             get
