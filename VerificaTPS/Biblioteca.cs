@@ -62,7 +62,7 @@ namespace VerificaTPS
         {
             _listaLibri.Add(x);
         }
-        public void AggiungiLibro(string autore,string titolo,string annoPublicazione, string editor,int numeroPagine)
+        public void AggiungiLibro(string autore, string titolo, string annoPublicazione, string editor, int numeroPagine)
         {
             Libro x = new Libro(autore, titolo, annoPublicazione, editor, numeroPagine);
             _listaLibri.Add(x);
@@ -70,9 +70,9 @@ namespace VerificaTPS
         public List<Libro> RicercaLibroPerTitolo(string titolo)
         {
             List<Libro> ListaDeiLibriRicercati = new List<Libro>();
-            foreach(Libro x in _listaLibri)
+            foreach (Libro x in _listaLibri)
             {
-                if(x.titolo==titolo)
+                if (x.titolo == titolo)
                 {
                     ListaDeiLibriRicercati.Add(x);
                 }
@@ -82,9 +82,9 @@ namespace VerificaTPS
         public List<Libro> RIcercaPerAutore(string autore)
         {
             List<Libro> ListaDeiLibriRicercati = new List<Libro>();
-            foreach(Libro x in _listaLibri)
+            foreach (Libro x in _listaLibri)
             {
-                if(x.autore==autore)
+                if (x.autore == autore)
                 {
                     ListaDeiLibriRicercati.Add(x);
                 }
